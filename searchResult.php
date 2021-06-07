@@ -46,12 +46,18 @@
       
       <br><br>
 
-      <form action="safeSearchResult.php" method="POST" style="min-height:0;">
+      <form action="searchResult.php" method="POST" style="min-height:0;">
          <div class="form-group">
             <input type="text"  class="form-control" placeholder="Search" name="search">
          </div>
          <div class="form-group">
             <input type="submit" value="Submit" class="btn btn-success">
+         </div>
+         <div class="form-group">
+            <?php
+               $searchText=$_POST["search"];
+               echo "<h2>You searched : <b>$searchText</b></h2>"
+            ?>
          </div>
       </form>
       <br><br>

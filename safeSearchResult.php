@@ -5,6 +5,11 @@
    {
       header("location: login.php");
    }
+
+   function _e($string)
+   {
+      echo htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+   }
 ?>
 <html lang="en">
 <head>
@@ -52,6 +57,13 @@
          </div>
          <div class="form-group">
             <input type="submit" value="Submit" class="btn btn-success">
+         </div>
+         <div class="form-group">
+            <?php
+               $searchText=$_POST["search"];
+               // echo "<h2>You searched : <b>$searchText</b></h2>"
+            ?>
+            <h2>You searched : <b> <?php _e($searchText); ?> </b></h2>
          </div>
       </form>
       <br><br>
